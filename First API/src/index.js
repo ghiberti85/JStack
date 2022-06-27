@@ -25,6 +25,12 @@ if(splitEndpoint.length > 1) {
   if (route) {
     request.query = Object.fromEntries(parsedUrl.searchParams);
     request.params = { id };
+
+    response.send = (statusCode, body) => {
+      response.writeHead(statusCode, { 'Content-Type': 'application/json' });
+      response.end(JSON.stringify(body));
+    }
+
     route.handler(request, response);
   } else {
     response.writeHead(404, { 'Content-Type': 'text/html' });
