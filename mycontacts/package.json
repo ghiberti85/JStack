@@ -6,6 +6,9 @@
   "repository": "https://github.com/ghiberti85/JStack",
   "author": "Fernando Ghiberti",
   "license": "MIT",
+  "scripts": {
+    "dev": "npx nodemon src/index.js"
+  },
   "dependencies": {
     "express": "^4.18.1"
   },
